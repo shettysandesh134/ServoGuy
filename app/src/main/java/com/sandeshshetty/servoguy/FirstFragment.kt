@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.sandeshshetty.servoguy.databinding.FragmentFirstBinding
 
 /**
@@ -32,8 +33,10 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAnchorView(R.id.fab)
+                .setAction("Action", null).show()
         }
     }
 
