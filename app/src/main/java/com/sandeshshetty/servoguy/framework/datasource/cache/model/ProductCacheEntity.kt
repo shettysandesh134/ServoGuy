@@ -1,25 +1,49 @@
-package com.sandeshshetty.servoguy.business.domain.model
+package com.sandeshshetty.servoguy.framework.datasource.cache.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Parcelize
-data class Product(
+/**
+ * @author sandeshshetty
+ * Created 9/19/22 at {TIME}
+ */
+@Entity(tableName = "product")
+data class ProductCacheEntity(
+
+    @PrimaryKey(autoGenerate = false)
+    @ColumnInfo(name = "id")
     val id: String,
+
+    @ColumnInfo(name = "productName")
     val productName: String,
+
+    @ColumnInfo(name = "productWeight")
     val productWeight: String,
+
+    @ColumnInfo(name = "productPrice")
     val productPrice: String,
+
+    @ColumnInfo(name = "productExpiry")
     val productExpiry: String,
+
+    @ColumnInfo(name = "productQuantity")
     val productQuantity: String,
+
+    @ColumnInfo(name = "productImage")
     val productImage: String,
+
+    @ColumnInfo(name = "productName")
     val type: String
-): Parcelable {
+) {
+
+
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Product
+        other as ProductCacheEntity
 
         if (id != other.id) return false
         if (productName != other.productName) return false
